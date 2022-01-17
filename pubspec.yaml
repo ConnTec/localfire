@@ -1,6 +1,6 @@
 name: localfire
 description: A JSON file-based storage package provides a persistent repository for simple NoSQL database.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/ConnTec/localfire
 
 environment:
