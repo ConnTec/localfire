@@ -1,8 +1,7 @@
 name: localfire
 description: A JSON file-based storage package provides a persistent repository for simple NoSQL database.
-
-version: 0.0.1
-homepage: https://github.com/Leandropslv/localfire
+version: 1.0.0
+homepage: https://github.com/ConnTec/localfire
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
