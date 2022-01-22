@@ -5,7 +5,8 @@ Map<String, dynamic> deepMergeMap(
       a[k] = v;
     } else {
       if (a[k] is Map) {
-        deepMergeMap(a[k], b[k]);
+        deepMergeMap(
+            Map<String, dynamic>.from(a[k]), Map<String, dynamic>.from(b[k]));
       } else {
         a[k] = b[k];
       }

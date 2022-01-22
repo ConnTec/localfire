@@ -34,14 +34,15 @@ void main() {
     });
     test('creates and updates data', () async {
       Map<String, dynamic> data = {
-        'uid': '8rvf1dfxw',
-        'displayName': {'test': 'Chuyen'}
+        'id': '0002',
+        'displayName': {'test': 'Chuyen'},
+        'value': 'teste',
       };
       final doc = db.collection('Users').doc('002');
       await doc.set(data, merge: true);
-      await doc.update({
-        'displayName': {'test1': '001'}
-      });
+      data['value'] = '2';
+      await doc.update(data);
+      await doc.set(data);
       final expectedDoc = db.collection('Users').doc(doc.id);
       expect(doc, expectedDoc);
       final expectedData = await doc.get();
