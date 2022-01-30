@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [1.0.5] - 30/01/2020
+
+- Merge recursive function fixed.
+
 ## [1.0.4] - 30/01/2020
 
 - Merge recursive function added.
