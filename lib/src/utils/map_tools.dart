@@ -1,17 +1,12 @@
 Map<String, dynamic> deepMergeMap(
     Map<String, dynamic> source, Map<String, dynamic> changes) {
-  source.forEach((k, v) {
-    if (!changes.containsKey(k)) {
-      changes[k] = v;
+  changes.forEach((k, v) {
+    if (source.containsKey(k) && changes[k] is Map && source[k] is Map) {
+      deepMergeMap(source[k], changes[k]);
     } else {
-      if (changes[k] is Map) {
-        deepMergeMap(Map<String, dynamic>.from(changes[k]),
-            Map<String, dynamic>.from(source[k]));
-      } else {
-        changes[k] = source[k];
-      }
+      source[k] = v;
     }
   });
 
-  return changes;
+  return source;
 }
